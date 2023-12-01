@@ -108,23 +108,6 @@ class DatabaseSeeder extends Seeder
                     'type' => 'system_version',
                     'data' => '1.0.9',
                 ],
-                [
-                    'id' => 17,
-                    'type' => 'company_logo',
-                    'data' => 'logo.png',
-                ],
-                [
-                    'id' => 18,
-                    'type' => 'web_logo',
-                    'data' => 'web_logo.png',
-                ],
-                [
-                    'id' => 19,
-                    'type' => 'favicon_icon',
-                    'data' => 'favicon.png.png',
-                ],
-
-
 
             ]
         );

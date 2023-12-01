@@ -283,8 +283,8 @@ class LanguageController extends Controller
     }
     public function downloadPanelFile()
     {
-        $file = public_path("web_languages/en.json");
-
+      
+ $file = base_path("resources/lang/en.json");
         $filename = 'en.json';
 
         return Response::download($file, $filename, [
@@ -302,7 +302,8 @@ class LanguageController extends Controller
     }
     public function downloadWebFile()
     {
-        $file = base_path("resources/lang/en.json");
+      $file = public_path("web_languages/en.json");
+       
         $filename = 'en.json';
 
         return Response::download($file, $filename, [

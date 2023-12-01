@@ -145,8 +145,8 @@
                                 <label class="col-sm-2 form-label ">{{ __('Comapany Logo') }}</label>
                                 <div class="col-sm-4">
                                     <input class="filepond" type="file" name="company_logo" id="company_logo">
-                                    <img src="{{ url('assets/images/logo/' . (system_setting('company_logo') ? system_setting('company_logo') : 'logo.png')) }}"
-                                        class="mt-2 company_logo" alt="image" style="height: 31%;width: 21%;">
+                                    <img src="{{ url('assets/images/logo/logo.png') }}" class="mt-2 company_logo"
+                                        alt="image" style="height: 31%;width: 21%;">
 
                                 </div>
                             </div>
@@ -160,15 +160,15 @@
                                 <label class="col-sm-2 form-label ">{{ __('Login Page Image') }}</label>
                                 <div class="col-sm-4">
                                     <input class="filepond" type="file" name="login_image" id="login_image">
-                                    <img src="{{ url('assets/images/bg/' . (system_setting('login_image') ? system_setting('login_image') : 'Login_BG.jpg')) }}"
-                                        class="mt-2 login_image" alt="image" style="height: 31%;width: 21%;">
+                                    <img src="{{ url('assets/images/bg/Login_BG.jpg') }}" class="mt-2 login_image"
+                                        alt="image" style="height: 31%;width: 21%;">
 
                                 </div>
                                 <label class="col-sm-2 form-label ">{{ __('Web Logo') }}</label>
                                 <div class="col-sm-4">
                                     <input class="filepond" type="file" name="web_logo" id="web_logo">
-                                    <img src="{{ url('assets/images/logo/' . (system_setting('web_logo') ? system_setting('web_logo') : 'web_logo.png')) }}"
-                                        class="mt-2 web_logo" alt="image" style="height: 31%;width: 21%;">
+                                    <img src="{{ url('assets/images/logo/web_logo.png') }}" class="mt-2 web_logo"
+                                        alt="image" style="height: 31%;width: 21%;">
 
                                 </div>
                             </div>
@@ -765,3 +765,4 @@
         });
     </script>
 @endsection
+

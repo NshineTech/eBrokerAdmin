@@ -97,11 +97,6 @@ class PropertController extends Controller
 
 
 
-            $title = $request->title;
-            $model = Property::class;
-
-
-           
 
             $Saveproperty->description = $request->description;
             $Saveproperty->address = $request->address;

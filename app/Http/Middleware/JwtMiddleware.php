@@ -29,27 +29,27 @@ class JwtMiddleware
             }
             $payload = JWTAuth::decode($token);
             $user_id = $payload->get('customer_id');
-            $res = Customer::find($user_id);
-            if (!empty($res)) {
-                if ($res->api_token != $token) {
-                    return response()->json([
-                        'error' => true,
-                        'message' => 'Unauthorized access'
-                    ], 401);
-                } else {
-                    if ($res->isActive == 0) {
-                        return response()->json([
-                            'error' => true,
-                            'message' => 'your account has been deactive! please contact admin'
-                        ], 401);
-                    }
-                }
-            } else {
-                return response()->json([
-                    'error' => true,
-                    'message' => 'Unauthorized access'
-                ], 401);
-            }
+            // $res = Customer::find($user_id);
+            // if (!empty($res)) {
+            //     if ($res->api_token != $token) {
+            //         return response()->json([
+            //             'error' => true,
+            //             'message' => 'Unauthorized access'
+            //         ], 401);
+            //     } else {
+            //         if ($res->isActive == 0) {
+            //             return response()->json([
+            //                 'error' => true,
+            //                 'message' => 'your account has been deactive! please contact admin'
+            //             ], 401);
+            //         }
+            //     }
+            // } else {
+            //     return response()->json([
+            //         'error' => true,
+            //         'message' => 'Unauthorized access'
+            //     ], 401);
+            // }
 
             $user = JWTAuth::parseToken()->authenticate();
         } catch (Exception $e) {

@@ -85,7 +85,7 @@ class ApiController extends Controller
                 $publicKey = file_get_contents(base_path('public_key.pem')); // Load the public key
                 $encryptedData = '';
                 if (openssl_public_encrypt($row->data, $encryptedData, $publicKey)) {
-
+                    //  dd("inj");
                     $tempRow[$row->type] = base64_encode($encryptedData);
                 }
             } else if ($row->type == 'company_logo') {
@@ -654,7 +654,7 @@ class ApiController extends Controller
         }
 
 
-          if (isset($request->max_price) && isset($request->min_price)) {
+         if (isset($request->max_price) && isset($request->min_price)) {
             // dd($min_price);
 
             $property = $property->whereBetween('price', [$min_price, $max_price]);
@@ -868,6 +868,10 @@ class ApiController extends Controller
                         mkdir($destinationPath, 0777, true);
                     }
                     $Saveproperty = new Property();
+                    $title = $request->title;
+                    $model = Property::class;
+                    $Saveproperty->slug_id = generateUniqueSlug($title, $model);
+
                     $Saveproperty->category_id = $request->category_id;
 
                     $Saveproperty->title = $request->title;
@@ -1620,10 +1624,6 @@ class ApiController extends Controller
             Customer::find($userid)->delete();
             Property::where('added_by', $userid)->delete();
             PropertysInquiry::where('customers_id', $userid)->delete();
-            Chats::where('sender_id', $userid)->orWhere('receiver_id', $userid)->delete();
-            Notifications::where('customers_id', $userid)->delete();
-
-
 
             $response['error'] = false;
             $response['message'] = 'Delete Succssfully';

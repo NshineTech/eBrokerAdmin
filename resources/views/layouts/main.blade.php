@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+
 <html lang="en">
 
 <head>
@@ -45,5 +46,7 @@
     @yield('js')
     @yield('script')
 </body>
+
+
 
 </html>
